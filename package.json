@@ -1,0 +1,25 @@
+{
+  "name": "locavia-server",
+  "version": "1.0.0",
+  "description": "simple server for a simple client",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusAndroid/infossistemas-teste.git"
+  },
+  "author": "Matheus Luiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusAndroid/infossistemas-teste/issues"
+  },
+  "homepage": "https://github.com/MatheusAndroid/infossistemas-teste#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "sequelize": "^6.23.0",
+    "sqlite3": "^5.1.1"
+  }
+}
