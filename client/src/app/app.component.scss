@@ -12,7 +12,18 @@ aside{
     div, nav{
         display: flex;
         flex-direction: column;
+        div{
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            transition-duration: 0.4;
+        }
+        div:hover{
+            padding-left: 10px;
+            color: var(--secondary);
+        }
     }
+    
 }
 #logo{
     font-family: Caveat, Cursive;
