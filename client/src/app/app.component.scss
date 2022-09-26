@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+aside{
+    width: max(200px, 30vw);
+    height: 100vh;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+
+    div, nav{
+        display: flex;
+        flex-direction: column;
+    }
+}
+#logo{
+    font-family: Caveat, Cursive;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    font-size: xx-large;
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+section{
+    padding: 30px;
+    width: 75%;
+}
+section > *{
+    width: 100%;
+}

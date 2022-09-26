@@ -1,0 +1,43 @@
+<div class="main">
+    <p class="title">Adicionar Veículo</p>
+    <form >
+        <mat-form-field appearance="standard">
+            <mat-label>Marca</mat-label>
+            <input matInput name="marca" [(ngModel)]="veiculo.marca">
+            <mat-icon matSuffix>directions_car</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Modelo</mat-label>
+            <input matInput name="modelo" [(ngModel)]="veiculo.modelo">
+            <mat-icon matSuffix>commute</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Ano</mat-label>
+            <input matInput type="number" min="1960" max="2022" name="ano" [(ngModel)]="veiculo.ano">
+            <mat-icon matSuffix>calendar_today</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Chassi</mat-label>
+            <input matInput name="chassi" [(ngModel)]="veiculo.chassi">
+            <mat-icon matSuffix>more</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Renavam</mat-label>
+            <input matInput name="renavam" [(ngModel)]="veiculo.renavam">
+            <mat-icon matSuffix>description</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Placa</mat-label>
+            <input matInput name="placa" [(ngModel)]="veiculo.placa">
+            <mat-icon matSuffix>car-rental</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+        <button mat-button (click)="sendDevice()">Registrar Veículo</button>
+    </form>
+</div>
