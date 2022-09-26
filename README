@@ -1,11 +1,11 @@
-LOCAVIA
+# LOCAVIA
 
 Simples software com Backend (NodeJs/Sequelize/Express) e frontend (Angular) com CRUD de veículos.
 
-Instalação
+## Instalação
 
-npm run install
+`npm run install`
 
-Executar
+## Executar
 
-npm start
+`npm start`

@@ -24,6 +24,13 @@ app.get('/veiculos', async (req, res) => {
   const veiculos = await Veiculo.findAll();
   res.send(JSON.stringify(veiculos));
 })
+app.get('/veiculos/:id', async (req, res) => {
+  let { id } = req.params;
+  id = parseInt(id)
+  console.log("Buscando veículo com id", id)
+  const veiculo = await Veiculo.findByPk(id);
+  res.send(JSON.stringify(veiculo));
+})
 app.post('/veiculos', async (req, res) => {
   const recebido = req.body
   console.log("recebi do client", recebido)
@@ -38,7 +45,7 @@ app.post('/veiculos', async (req, res) => {
 
     });
   console.log("Novo veículo adicionado com ID", veiculo.id)
-  res.sendStatus(200)
+  res.send({status: true})
 })
 app.put('/veiculos/:id', async (req, res) => {
   const { id } = req.params;
@@ -60,7 +67,7 @@ app.put('/veiculos/:id', async (req, res) => {
       }
     }
   )
-  res.sendStatus(200)
+  res.send({status: true})
 })
 app.delete('/veiculos/:id', async (req, res) => {
   const { id } = req.params;
@@ -70,7 +77,7 @@ app.delete('/veiculos/:id', async (req, res) => {
       id: id
     }
   })
-  res.sendStatus(200)
+  res.send({status: true})
 })
 
 

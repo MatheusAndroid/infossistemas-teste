@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Veiculo } from './../../models/Veiculo';
-import { VeiculoService } from './../../services/veiculo.service';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { Veiculo } from 'src/app/models/Veiculo';
+import { VeiculoService } from 'src/app/services/veiculo.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'add-veiculo',
-  templateUrl: './add-veiculo.component.html',
-  styleUrls: ['./add-veiculo.component.scss']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.scss']
 })
-export class AddVeiculoComponent implements OnInit {
+export class EditComponent implements OnInit {
+  
   veiculo: Veiculo = new Veiculo({});
   snackbarConfig :MatSnackBarConfig = {
     horizontalPosition: 'right',
@@ -24,7 +25,11 @@ export class AddVeiculoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.veiculo = this.veiculoService.getVeiculoToEdit();
+    if (!this.veiculo) {
+      this.snackbar.open("Erro ao tentar editar Veículo", '', this.snackbarConfig)
+      this.route.navigate(['home'])
+    }
   }
   sendDevice() {
     if (!this.veiculo.marca) {
@@ -40,14 +45,15 @@ export class AddVeiculoComponent implements OnInit {
       return;
     }
 
-    this.veiculoService.addVeiculo(this.veiculo).subscribe(
+    this.veiculoService.updateVeiculo(this.veiculo, this.veiculo.id).subscribe(
       (success) => {
-        this.snackbar.open("Veículo Registrado", '', this.snackbarConfig);
+        this.snackbar.open("Veículo Atualizado", '', this.snackbarConfig);
         this.route.navigate(['home'])
       },
       (error) => {
-        this.snackbar.open("Erro ao registrar veículo",'', this.snackbarConfig)
+        this.snackbar.open("Erro ao atualizar veículo",'', this.snackbarConfig)
       }
     );
   }
+
 }

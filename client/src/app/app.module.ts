@@ -12,14 +12,16 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AddVeiculoComponent } from './component/add-veiculo/add-veiculo.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { EditComponent } from './component/edit/edit.component'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
     VeiculosComponent,
-    AddVeiculoComponent
+    AddVeiculoComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
